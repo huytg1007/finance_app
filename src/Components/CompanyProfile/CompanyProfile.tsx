@@ -4,6 +4,7 @@ import { CompanyKeyMetrics } from "../../company";
 import RatioList from "../RatioList/RatioList";
 
 import { getKeyMetrics } from "../../Api/api";
+import Spinner from "../Spinner/Spinner";
 
 type Props = {};
 
@@ -48,7 +49,7 @@ const CompanyProfile = (props: Props) => {
           <RatioList config={tableConfig} data={companyData} />
         </>
       ) : (
-        <h1>No data found</h1>
+        <Spinner />
       )}
     </>
   );

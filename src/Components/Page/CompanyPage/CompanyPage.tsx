@@ -6,6 +6,7 @@ import Tile from "../../Tile/Tile";
 import CompanyDashboard from "../../CompanyDashboard/CompanyDashboard";
 import Sidebar from "../../SideBar/SideBar";
 import Spinner from "../../Spinner/Spinner";
+import CompFinder from "../../CompFinder/CompFinder";
 
 
 
@@ -34,6 +35,11 @@ const CompanyPage = (props: Props) => {
         <Tile title="Price" subTitle={company.price.toString()} />
         <Tile title="Sector" subTitle={company.sector} />
         <Tile title="Market Cap" subTitle={company.mktCap.toString()} />
+        
+        <CompFinder ticker={company.symbol} />
+            <p className="bg-white shadow rounded text-medium font-medium text-gray-900 p-3 mt-1 m-4">
+              {company.description}
+            </p>
         </CompanyDashboard>
 
      </div>

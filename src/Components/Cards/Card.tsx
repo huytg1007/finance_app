@@ -17,11 +17,12 @@ export const Card = ({id, searchResult, onPortfolioCreate}: Props) => {
       id={id}
     >
       <Link
-        to={`/company/${searchResult.symbol}`}
+        to={`/company/${searchResult.symbol}/company-profile`}
         className="font-bold text-center text-veryDarkViolet md:text-left"
       >
         {searchResult.name} ({searchResult.symbol})
       </Link>
+      
       <p className="text-veryDarkBlue">{searchResult.currency}</p>
       <p className="font-bold text-veryDarkBlue">
         {searchResult.exchangeShortName} - {searchResult.stockExchange}

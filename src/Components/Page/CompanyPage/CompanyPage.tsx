@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCompanyProfile } from "../../../Api/api";
 import { CompanyProfile } from "../../../company";
-import Sidebar from "../../SideBar/SideBar";
-import CompanyDashboard from "../../CompanyDashboard/CompanyDashboard";
 import Tile from "../../Tile/Tile";
+import CompanyDashboard from "../../CompanyDashboard/CompanyDashboard";
+import Sidebar from "../../SideBar/SideBar";
 
 
 
@@ -27,10 +27,12 @@ const CompanyPage = (props: Props) => {
       {company ? (
        <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-hidden">
         <Sidebar/>
-        <CompanyDashboard>
+        <CompanyDashboard ticker={ticker!}>
 
         <Tile title="Company Name" subTitle={company.companyName} />
-
+        <Tile title="Price" subTitle={company.price.toString()} />
+        <Tile title="Sector" subTitle={company.sector} />
+        <Tile title="Market Cap" subTitle={company.mktCap.toString()} />
         </CompanyDashboard>
 
      </div>

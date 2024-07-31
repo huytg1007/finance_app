@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { CompanyCashFlow } from "../../company";
 import Table from "../Table/Table";
@@ -17,22 +17,28 @@ const config = [
     render: (company: CompanyCashFlow) => company.operatingCashFlow,
   },
   {
-    label: "Property/Machinery Cashflow",
-    render: (company: CompanyCashFlow) =>
-      company.investmentsInPropertyPlantAndEquipment,
+    label: "Investing Cashflow",
+    render: (company: CompanyCashFlow) => company.netCashUsedForInvestingActivites,
   },
   {
-    label: "Other Investing Cashflow",
+    label: "Financing Cashflow",
     render: (company: CompanyCashFlow) => company.otherInvestingActivites,
   },
   {
     label: "Debt Cashflow",
-    render: (company: CompanyCashFlow) =>
-      company.netCashUsedProvidedByFinancingActivities,
+    render: (company: CompanyCashFlow) => company.netCashUsedProvidedByFinancingActivities,
+  },
+  {
+    label: "Cash At End of Period",
+    render: (company: CompanyCashFlow) => company.cashAtEndOfPeriod,
   },
   {
     label: "CapEX",
     render: (company: CompanyCashFlow) => company.capitalExpenditure,
+  },
+  {
+    label: "Issuance Of Stock",
+    render: (company: CompanyCashFlow) => company.commonStockIssued,
   },
   {
     label: "Free Cash Flow",
@@ -49,7 +55,7 @@ const CashflowStatement = (props: Props) => {
       setCashFlowData(result!.data);
     };
     getRatios();
-  }, []);
+  }, [ticker]);
   return cashFlowData ? (
     <Table config={config} data={cashFlowData}></Table>
   ) : (

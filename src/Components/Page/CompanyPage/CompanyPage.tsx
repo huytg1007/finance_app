@@ -7,6 +7,7 @@ import CompanyDashboard from "../../CompanyDashboard/CompanyDashboard";
 import Sidebar from "../../SideBar/SideBar";
 import Spinner from "../../Spinner/Spinner";
 import CompFinder from "../../CompFinder/CompFinder";
+import TenKFinder from "../../TenkFinder/TenKFinder";
 
 
 
@@ -22,7 +23,7 @@ const CompanyPage = (props: Props) => {
       setCompany(result?.data[0]);
     };
     getProfileInit();
-  }, []);
+  }, [ticker]);
 
   return (
     <>
@@ -33,13 +34,16 @@ const CompanyPage = (props: Props) => {
 
         <Tile title="Company Name" subTitle={company.companyName} />
         <Tile title="Price" subTitle={company.price.toString()} />
+        <Tile title="DCF" subTitle={company.dcf.toString()} />
         <Tile title="Sector" subTitle={company.sector} />
-        <Tile title="Market Cap" subTitle={company.mktCap.toString()} />
         
         <CompFinder ticker={company.symbol} />
-            <p className="bg-white shadow rounded text-medium font-medium text-gray-900 p-3 mt-1 m-4">
-              {company.description}
-            </p>
+        <TenKFinder ticker={company.symbol} />
+
+        <p className="bg-white shadow rounded text-medium font-medium text-gray-900 p-3 mt-1 m-4">
+          {company.description}
+        </p>
+        
         </CompanyDashboard>
 
      </div>

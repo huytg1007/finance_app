@@ -14,7 +14,7 @@ namespace WebApi.Migrations
     [DbContext(typeof(ApplicationDBContext))]
     [Migration("20240731170343_init")]
 #pragma warning disable CS8981 // The type name only contains lower-cased ascii characters. Such names may become reserved for the language.
-    partial class init
+    partial class Init
 #pragma warning restore CS8981 // The type name only contains lower-cased ascii characters. Such names may become reserved for the language.
     {
         /// <inheritdoc />

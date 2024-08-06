@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CompanyTenK } from "../../company";
 import { getTenK } from "../../Api/api";
-import TenKFinderItem from "../TenKFinderItem/TenKFinderItem";
+import TenKFinderItem from "./TenKFinderItem/TenKFinderItem";
 import Spinner from "../Spinner/Spinner";
 
 type Props = {

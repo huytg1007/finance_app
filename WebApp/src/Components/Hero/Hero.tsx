@@ -20,7 +20,7 @@ const Hero = (props: Props) => {
             <Link
               to="/search"
               className="py-5 px-10 text-2xl font-bold text-white bg-lightGreen rounded lg:py-4 hover:opacity-70">
-              Get Started
+                Get Started
             </Link>
           </div>
         </div>

@@ -95,12 +95,19 @@ builder.Services.AddHttpClient<IFMPService, FMPService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// use app.Environment.IsProduction() to enable swagger after deploy
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cash Flow Game Api v1");
+        // Set URl as /index.html
+        c.RoutePrefix = String.Empty;
+    });
 }
+
 
 app.UseHttpsRedirection();
 

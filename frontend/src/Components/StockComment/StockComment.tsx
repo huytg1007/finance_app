@@ -31,7 +31,7 @@ const StockComment = ({ stockSymbol }: Props) => {
         }
       })
       .catch((e) => {
-        toast.warning(e);
+        toast.warn(e);
       });
   };
 

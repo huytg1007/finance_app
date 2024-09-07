@@ -7,6 +7,7 @@ interface Props {
     onPortfolioDelete: (e: SyntheticEvent) => void,
 }
 
+
 export const PortfolioList = ({portfolioValues, onPortfolioDelete}: Props) => {
   return (
     <>
@@ -20,6 +21,7 @@ export const PortfolioList = ({portfolioValues, onPortfolioDelete}: Props) => {
               portfolioValues.map((portfolioValue) => {
                 return (
                   <CardPortfolio
+                    key={portfolioValue.id}
                     portfolioValue={portfolioValue}
                     onPortfolioDelete={onPortfolioDelete}
                   />

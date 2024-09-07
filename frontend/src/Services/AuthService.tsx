@@ -3,7 +3,7 @@ import { UserProfileToken } from "../Models/User";
 import { handleError } from "../Helpers/ErrorHandler";
 
 
-const api = "http://financial-api.somee.com/api/";
+const api = "https://financial-api-demo-gjabf4bnaqavephs.southeastasia-01.azurewebsites.net/api/";
 
 export const loginAPI = async (username: string, password: string) => {
   try {

@@ -67,7 +67,6 @@ export const getBalanceSheet = async (query: string) => {
   }
 };
 
-
 export const getCashFlow = async (query: string) => {
   try {
     const data = await axios.get<CompanyCashFlow[]>(
@@ -89,7 +88,6 @@ export const getCompData = async (query: string) => {
     console.log("error message: ", error.message);
   }
 };
-
 
 export const getTenK = async (query: string) => {
   try {
